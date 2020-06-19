@@ -1,8 +1,8 @@
 {
   "name": "minimal-bch-wallet",
-  "version": "1.0.0",
+  "version": "1.3.2",
   "description": "A minimalist Bitcoin Cash (BCH) wallet npm library, for use in a web apps.",
-  "main": "index.js",
+  "main": "dist/minimal-bch-wallet.min.js",
   "scripts": {
     "start": "node index.js",
     "test": "nyc mocha test/unit/",
@@ -10,7 +10,8 @@
     "lint": "standard --env mocha --fix",
     "docs": "./node_modules/.bin/apidoc -i src/ -o docs",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "coverage:report": "nyc --reporter=html mocha test/unit/ --exit"
+    "coverage:report": "nyc --reporter=html mocha test/unit/ --exit",
+    "build": "webpack"
   },
   "keywords": [
     "bitcoin",
@@ -49,7 +50,9 @@
     "nyc": "^15.0.0",
     "semantic-release": "^17.0.0",
     "sinon": "^9.0.2",
-    "standard": "^14.3.1"
+    "standard": "^14.3.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "release": {
     "publish": [
